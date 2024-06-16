@@ -1,15 +1,13 @@
 const initialState = {
-    users:[ 
-        { id: 1, designation: "del", pu:15000, Quantite:15 }
-         
-    ] 
+    users: []
 };
-const reducer = (state=initialState, action) => {
-    switch(action.type) {
+
+const reducer = (state = initialState, action) => {
+    switch (action.type) {
         case "Add_user":
-            return {...state, users:[...state.users, action.payload]}
+            return { ...state, users: [...state.users, action.payload] }
         case "Update_user":
-            const user = state.users.find((u)=>u.id===parseInt(action.payload.id))
+            const user = state.users.find((u) => u.id === parseInt(action.payload.id))
             if (user) {
                 user.designation = action.payload.designation
                 user.pu = action.payload.pu
@@ -17,7 +15,9 @@ const reducer = (state=initialState, action) => {
             }
             return state
         case "Delete_user":
-            return {...state, users:[...state.users.filter((u)=>u.id!==parseInt(action.payload))]}
+            return { ...state, users: [...state.users.filter((u) => u.id !== parseInt(action.payload))] }
+        case "DeletAllAction":
+            return {...state , users: []}
         default:
             return state
     }

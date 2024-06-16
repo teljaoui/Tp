@@ -7,3 +7,6 @@ export const updateUserAction = (newuser) => {
 export const deleteUserAction = (id) => {
     return {type: "Delete_user", payload:id}
 }
+export const DeletAllAction =() =>{
+    return {type: "DeletAllAction"}
+}

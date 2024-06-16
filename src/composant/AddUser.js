@@ -15,7 +15,6 @@ function AddUser() {
             designation:designation,
             pu:pu,
             Quantite:Quantite
-           
         }))
         navigate('/')
     }
